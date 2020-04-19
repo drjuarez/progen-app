@@ -1,0 +1,49 @@
+// Margins: .margin-x, .margin-left-x, .margin-bottom-x, etc.
+$margin-types: left, right, top, bottom;
+$margin-increments: 0, 1, 2, 3, 5, 7, 10, 15, 20, 30, 50;
+
+// Generate .margin-x
+@each $margin-increment in $margin-increments {
+  .margin-#{$margin-increment} {
+    margin: #{$margin-increment}px !important;
+  }
+}
+
+// Generate .margin-type-x
+@each $margin-type in $margin-types {
+  @each $margin-increment in $margin-increments {
+    .margin-#{$margin-type}-#{$margin-increment} {
+      margin-#{$margin-type}: #{$margin-increment}px !important;
+    }
+  }
+}
+
+// Padding: .padding-x, .padding-left-x, etc.
+$padding-types: left, right, top, bottom;
+$padding-increments: 0, 5, 10, 20, 30, 35, 40, 50;
+
+// Generate .padding-x
+@each $padding-increment in $padding-increments {
+  .padding-#{$padding-increment} {
+    padding: #{$padding-increment}px !important;
+  }
+}
+
+// Generate .padding-type-x
+@each $padding-type in $padding-types {
+  @each $padding-increment in $padding-increments {
+    .padding-#{$padding-type}-#{$padding-increment} {
+      padding-#{$padding-type}: #{$padding-increment}px !important;
+    }
+  }
+}
+
+// Horizontal Rules: .hr-x
+$hr-increments: 0, 5, 10, 15, 20;
+
+@each $hr-increment in $hr-increments {
+  .hr-#{$hr-increment} {
+    margin-top: #{$hr-increment}px;
+    margin-bottom: #{$hr-increment}px;
+  }
+}

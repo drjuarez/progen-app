@@ -1,0 +1,477 @@
+@import './variables.scss';
+
+body {
+  background: $primary-darkened;
+	border-radius: $panel-radius;
+  	color: $off-white;
+	background-color: #060d1a;
+	background-image: url("./images/pgbg.png");
+	height: 100%;
+
+	h1.title {
+		color: $gray4;
+	  font-weight: lighter;
+	  font-size: .8;
+	}
+
+	.link-styling {
+		color: $link-blue;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+  nav.navbar.navbar-expand-md {
+    justify-content: flex-end;
+  }
+
+
+
+
+	// Add Here --------------------------------------------------------------------
+
+	.app-container {
+		padding: 3em;
+	}
+
+	.tile {
+		//border: $color-border;
+		border-radius: $panel-radius;
+		box-shadow: $tile-shadow;
+	}
+
+	.pg-form-group {
+		label {
+			margin: 0;
+		}
+
+		margin: 0;
+	}
+
+	.form-control.pg-input {
+		background-color: inherit;
+		color: $off-white;
+		border-left: 0;
+		border-right: 0;
+		border-top: 0;
+		border-radius: 0;
+		padding-left: 0;
+		opacity: .5;
+	}
+
+	.context-header {
+		display: flex;
+		align-items: center;
+		padding: 10px 0 10px 0;
+		background: rgba(153,156,255,0.3);
+		margin: 1em 0 1em 0;
+		border-radius: $panel-radius;
+
+		.header-section {
+			padding: 5px;
+			color: white;
+			display: inline;
+			flex: 1;
+
+			p {
+				margin-bottom: 0;
+			}
+
+			.context-nav {
+				display: flex;
+
+				span {
+				flex: 20%;
+				}
+			}
+
+			&.inputs-toggle {
+				color: $blue3;
+
+				:hover {
+					cursor: pointer;
+				}
+			}
+
+			&.pick-project{
+				justify-content: flex-end;
+			}
+		}
+	}
+
+  nav.actions {
+    height: 4.5rem;
+    position: relative;
+
+    // Base Background
+    ul {
+      overflow: hidden;
+      // position: absolute;
+      display: flex;
+      flex-direction: column;
+      // top: 0;
+      // left: 0;
+      background-color: transparent;
+      transition: all .25s;
+      max-height: 10vhw;
+      overflow-y: auto;
+
+      li {
+        margin: 1em 0 1em 0;
+      }
+
+      &:hover {
+        box-shadow: .125em .125em .5em -.25em;
+
+        // Selected Input
+        li.selected {
+          background-color: #f3f3f3;
+
+          button {
+            cursor: default;
+
+            span {
+              color: #999;
+            }
+          }
+        }
+      }
+
+      &.has-selected:not(:hover)  {
+        border-color: alpha(#ddd);
+
+        li:not(.selected) {
+          height: 0;
+
+          &::after {
+            opacity: .25;
+          }
+        }
+
+      }
+
+      &:not(.has-selected) {
+        border-color: transparent;
+        box-shadow: none;
+        max-height: none;
+
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      li {
+        // height: 1rem;
+        overflow: hidden;
+        transition: all .25s;
+        text-align: center;
+      }
+
+      .round-button {
+        width:25%;
+      }
+      .round-button-circle {
+        width: 100%;
+        height:0;
+        padding-bottom: 100%;
+        border-radius: 50%;
+        border:10px solid #cfdcec;
+        overflow:hidden;
+
+        background: #4679BD;
+        box-shadow: 0 0 3px gray;
+      }
+      .round-button-circle:hover {
+        background:#30588e;
+      }
+      .round-button a {
+        display:block;
+        float:left;
+        width:100%;
+        padding-top:50%;
+        padding-bottom:50%;
+        line-height:1em;
+        margin-top:-0.5em;
+
+        text-align:center;
+        color:#e2eaf3;
+        font-family:Verdana;
+        font-size:1.2em;
+        font-weight:bold;
+        text-decoration:none;
+      }
+
+      // button {
+      //   border:  0;
+      //   border-radius: 50%;
+      //   min-height: 2em;
+      //   min-width: 2em;
+      //   // height: 4rem;
+      //   // width: 2rem;
+      //   background: $primary-color;
+      //   font-size: 1.5rem;
+      //   font-weight: 400;
+      //   color: $off-white;
+      //   padding: 0 4rem 0 .5em;
+      //   display: block;
+      //   margin: 0;
+      //   cursor: pointer;
+      //   display: flex;
+      //   flex-direction: column;
+      //   align-items: flex-start;
+      //   justify-content: center;
+      //   height: 3rem;
+      //
+      //
+      //   &:hover span {
+      //     color: #0079c0;
+      //   }
+      // }
+    }
+  }
+
+
+// Save Good
+  // nav.actions {
+  //   height: 4.5rem;
+  //   position: relative;
+  //
+  //   // Base Background
+  //   ul {
+  //     border: 1px solid #ddd;
+  //     border-radius: .25em;
+  //     overflow: hidden;
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     background-color: #fff;
+  //     transition: all .25s;
+  //     max-height: 10vhw;
+  //     overflow-y: auto;
+  //
+  //     &:hover {
+  //       box-shadow: .125em .125em .5em -.25em;
+  //
+  //       // Selected Input
+  //       li.selected {
+  //         background-color: #f3f3f3;
+  //
+  //         button {
+  //           cursor: default;
+  //
+  //           span {
+  //             color: #999;
+  //           }
+  //         }
+  //       }
+  //     }
+  //
+  //     &.has-selected:not(:hover)  {
+  //       border-color: alpha(#ddd);
+  //
+  //       li:not(.selected) {
+  //         height: 0;
+  //
+  //         &::after {
+  //           opacity: .25;
+  //         }
+  //       }
+  //
+  //     }
+  //
+  //     &:not(.has-selected) {
+  //       border-color: transparent;
+  //       box-shadow: none;
+  //       max-height: none;
+  //
+  //       &::after {
+  //         opacity: 0;
+  //       }
+  //     }
+  //
+  //     &::after {
+  //       content: '⌃';
+  //       transform: scaleY(-1);
+  //       position: absolute;
+  //       top: 0;
+  //       right: 0;
+  //       color: #333;
+  //       height: 4.5rem;
+  //       line-height: 6rem;
+  //       width: 2rem;
+  //       text-align: center;
+  //     }
+  //
+  //     li {
+  //       height: 3rem;
+  //       overflow: hidden;
+  //       transition: all .25s;
+  //     }
+  //
+  //     button {
+  //       border:  0;
+  //       background: transparent;
+  //       font-size: 1.5rem;
+  //       font-weight: 400;
+  //       color: #333;
+  //       padding: 0 4rem 0 .5em;
+  //       display: block;
+  //       margin: 0;
+  //       width: 100%;
+  //       text-align: left;
+  //       cursor: pointer;
+  //       display: flex;
+  //       flex-direction: column;
+  //       align-items: flex-start;
+  //       justify-content: center;
+  //       height: 3rem;
+  //
+  //       &:hover span {
+  //         color: #0079c0;
+  //       }
+  //     }
+  //   }
+  // }
+
+	.create-project-page {
+		display: grid;
+		grid-template-columns: 50% 50%;
+
+	}
+
+	// Project Form ----------------------------------------------------------------
+	//----------------------------------------------------------------
+	.project-init-form {
+		//margin-top: 1em;
+		//padding: 1em;
+		max-height: 100vh;
+
+		display: grid;
+		//grid-template-columns: 70% 30%;
+		// Four columns
+			// first column is half the page
+			// two more columns for the oteher half
+
+		grid-template-columns: 1fr;
+		grid-column-gap: 1em;
+		grid-row-gap: 1em;
+		grid-auto-rows: min-content;
+	}
+
+	.pg-form-actions {
+		display: flex;
+		justify-content: flex-start;
+
+		button {
+			margin-right: 1em;
+		}
+
+		.action-btn {
+			padding: 0;
+			border: none;
+			height: 4vw;
+			width: 4vw;
+			color: $cool-blue;
+			background-color: $project-column-color;
+			border-radius: 50%;
+			display: inline-block;
+			text-align: center;
+			font-weight: bold;
+			font-size: 1.2em;
+
+			&.expand {
+				background-color: $dark-gray;
+			}
+		}
+	}
+	
+	.main-view {
+		display: flex;
+
+        .statement-container {
+          flex-shrink: 0;
+          flex-basis: 75%;
+          overflow: scroll;
+          background-color: $off-white;
+          color: $gray1;
+		  border-radius: $panel-radius;
+          padding: 1em;
+        }
+	}
+
+	.input-column {
+		background-color: #273540;
+		padding: 1em 1em 0 1em;
+		border-radius: $panel-radius;
+		border: $tile-border;
+		grid-column-start: 0;
+		grid-column-end: 1;
+
+		&.project-column {
+			display: flex;
+			flex-direction: column;
+			background-color: $project-column-color;
+		}
+
+		&.supplemental-column {
+			background-color: $secondary-pane;
+		}
+
+		h1.form-title {
+			cursor: pointer;
+			font-size: 1.5em;
+			margin: 0;
+		}
+	}
+
+	button.btn.btn-submit {
+			background-color: $teal;
+			border: $white-border;
+			color: $off-white;
+		}
+
+
+	//Statememt ----------------------------------------------------------------
+	// --------------------------------------------------------------------------------------------------------------------------------
+	div.ReactVirtualized__Grid {
+		background-color: black;
+	}
+	section.content {
+		background-color: $off-white;
+		border: .5px solid $primary-darkened;
+		padding: 20px;
+		border-radius: $panel-radius;
+	}
+
+	.statement-container {
+		background-color: $off-white;
+        color: $gray4;
+		border-radius: $panel-radius;
+
+		.statement-cell {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			border: 1px solid $dark-gray;
+
+			&.header {
+				background-color: $context-color;
+			}
+
+			&.first-col {
+				padding: 2em;
+				font-size: 1.2em
+			}
+
+			&.first-row {
+				font-weight: lighter;
+			}
+
+			&.data {
+				background-color: $light-black;
+			}
+		}
+	}
+}

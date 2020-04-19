@@ -1,0 +1,15 @@
+@import '../variables.scss';
+
+.control-panel {
+	background-color: #f7f7ff;
+	border: 3px solid #f2f2f2;
+	padding: 10px;
+	border-radius: $panel-radius;
+	margin-bottom: 15px;
+
+	p.control-label {
+		padding: 0;
+		margin: 0;
+		font-weight: lighter;
+	}
+}

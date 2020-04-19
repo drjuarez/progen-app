@@ -1,0 +1,133 @@
+@import '../variables.scss';
+
+:local(.dockPresenter) {
+	padding-top: 10px;
+	.max-heighted {
+		max-height: 100px;
+		overflow: scroll;
+	}
+
+	.dock-close {
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+		a {
+			color: #959595;
+		}
+	}
+
+	.dock-header {
+		padding-left: 35px;
+		color: $gray2;
+		font-weight: lighter;
+
+		p:first {
+			color: $gray2;
+			font-weight: lighter;
+		}
+
+		h3 {
+			margin-bottom: 0;
+		}
+
+		p.title {
+			margin-bottom: 0;
+			font-size: 1.1em;
+			font-weight: normal;
+			color: $dark-gray;
+
+		}
+
+		p.value {
+			max-height: 100px;
+			overflow: scroll;
+			font-weight: normal;
+			color: $dark-gray;
+		}
+
+		.dock-head-title {
+			padding-left: 0;
+
+			h3 {
+				margin: 0;
+				word-wrap: break-word;
+			}
+		}
+		.dock-head-subtitle {
+			padding-left: 0;
+		}
+	}
+
+	.dock-panel {
+		padding: 5px;
+		padding-left: 20px;
+		padding-right: 20px;
+
+		.dock-panel-heading {
+			border-bottom: 1px solid #959595;
+
+			.dock-panel-title {
+				i {
+					color: #959595;
+					font-size: 1.5em;
+				}
+
+				p {
+					display: inline;
+					color: #1a1919;
+					font-size: 1.1em;
+				}
+			}
+		}
+
+
+		.dock-row {
+			padding: 10px 0px 10px 0px;
+
+
+			p.child-title {
+				margin-bottom: 0;
+				color: $gray2;
+				font-weight: lighter;
+			}
+
+			p.child-value{
+				font-weight: lighter;
+				color: $gray2;
+
+				&.link-styling {
+				  color: $link-blue;
+
+					&:hover {
+				    cursor: pointer;
+				  }
+				}
+			}
+
+
+		}
+
+	}
+
+	.btn-container {
+		text-align: center;
+		.overlay-circle-button {
+			padding: 6px;
+			padding-bottom: 3px;
+			padding-top: 2px;
+			background-color: #2680e9;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			border: none;
+			color: white;
+			font-size: 14px;
+			display: block;
+			margin: 0 auto;
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}

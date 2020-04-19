@@ -1,0 +1,103 @@
+// TODO make these paths resolve better
+import React, { Component } from 'react';
+import Form from '../componentLib/form/Form'
+import TextInput from '../componentLib/form/TextInput'
+import SelectInput from '../componentLib/form/SelectInput'
+import {addFormState} from '../../utils/stateUtils'
+import constants from '../../constants'
+
+class ProjectForm extends Component {
+  render() {
+    console.log(this.props)
+    const project = this.props.FormState.project && this.props.FormState.project.fields
+    let loanMaturityValue = null
+    if(project) {
+      console.log('ifentered;', project)
+      loanMaturityValue = project.loanMaturity || project.numberPeriods
+    }
+    return (
+      <div>
+        <Form onFormSubmit={this.props.handleSubmit}>
+          <div className='col-sm-6'>
+            <div className='row'>
+              <div className='col-sm-9'>
+                <TextInput
+                  label={'Project Name'}
+                  fieldName={'name'}
+                  formName={'project'}
+                  inputType={'text'}
+                  isRequired={true}
+                />
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-9'>
+                <TextInput
+                  label={'Property Cost'}
+                  fieldName={'initPropertyCost'}
+                  formName={'project'}
+                  inputType={'number'}
+                  isRequired={false}
+                />
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-6'>
+                <TextInput
+                  label={'Project Duration'}
+                  fieldName={'numberPeriods'}
+                  formName={'project'}
+                  inputType={'number'}
+                  isRequired={false}
+                />
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-6'>
+                <TextInput
+                  label={'Money Down'}
+                  fieldName={'equityDown'}
+                  formName={'project'}
+                  inputType={'number'}
+                  isRequired={false}
+                />
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-6'>
+                <SelectInput
+                  label={'Interest Rate Compounding'}
+                  fieldName={'periodType'}
+                  formName={'project'}
+                  options={constants.periodTypes.map(p => ({label: p, value: p}))}
+                  isRequired={false}
+                />
+              </div>
+            </div>
+            <button className='btn btn-submit'/>
+          </div>
+            <div className='col-sm-3'>
+              <TextInput
+                label={'Loan Maturity'}
+                fieldName={'loanMaturity'}
+                value={loanMaturityValue}
+                formName={'project'}
+                inputType={'number'}
+                isRequired={false}
+              />
+              <TextInput
+                label={'Interest Rate'}
+                fieldName={'interestRate'}
+                formName={'project'}
+                inputType={'number'}
+                isRequired={false}
+              />
+            </div>
+        </Form>
+      </div>
+    );
+  }
+
+}
+
+export default addFormState(ProjectForm);

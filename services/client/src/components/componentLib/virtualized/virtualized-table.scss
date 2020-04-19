@@ -1,0 +1,292 @@
+@import '../../styles/variables';
+
+.virtualized-title-container {
+	position: absolute;
+	.title {
+		font-size: 24px;
+		margin-right: 10px;
+	}
+	.button-group {
+		&:first-child {
+			margin-left: 20px;
+		}
+		display: inline-block;
+		text-align: center;
+		margin: 0px 5px;
+		font-size: 12px;
+		vertical-align: middle;
+
+		.circle-button {
+			margin: 0 auto;
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+}
+
+.ReactVirtualized__Table {
+	clear: both;
+	border-radius: 6px;
+
+	.ReactVirtualized__Table__headerRow {
+		border: 1px solid #9c9c9c;
+		background-color: $primary-darkened;
+		color: $white;
+		text-transform: none;
+		overflow: visible !important;
+		border-radius: 6px;
+
+		.ReactVirtualized__Table__headerColumn {
+			margin: 0;
+			outline: none;
+			font-size: 16px;
+
+			&:first-child {
+				padding-left: 10px;
+			}
+
+			.ReactVirtualized__Table__headerTruncatedText {
+				user-select: none;
+				vertical-align: middle;
+			}
+
+			.edit-column-trigger {
+				cursor: pointer;
+
+				.table-header-icon {
+					font-size: 12px;
+
+					&:first-child {
+						padding-right: 5px;
+					}
+
+					&:last-child {
+						padding-left: 5px;
+					}
+				}
+			}
+		}
+	}
+	.ReactVirtualized__Table__row {
+		.ReactVirtualized__Table__rowColumn {
+			padding: 0px !important;
+
+			&:first-child {
+				padding: 10px !important;
+			}
+			&:first-of-type {
+				padding-left: 10px;
+				margin-left: 0px;
+			}
+		}
+	}
+}
+
+.ReactVirtualized__Grid {
+	border: 1px solid #9c9c9c;
+	border-top: none;
+	outline: none;
+
+	&.ReactVirtualized__Table__Grid {
+		border-radius: 6px;
+	}
+
+	.ReactVirtualized__Table__row {
+		border-top: 1px solid #ddd;
+		padding: 8px 0 8px 0;
+
+		.ReactVirtualized__Table__rowColumn {
+			padding: 0px 15px;
+			margin-right: 0px;
+
+			&:first-child {
+				padding-left: 0px;
+			}
+		}
+
+		&.brucke-row-decorator {
+			background-color: white !important;
+			overflow: visible !important;
+
+
+			&:hover {
+				background-color: red;
+			}
+
+			&i:hover {
+				cursor: pointer;
+			}
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:nth-child(even) {
+			background-color: #f9f9f9;
+		}
+
+		.ReactVirtualized__Table__rowColumn {
+			font-size: 14px;
+
+			&.clickable {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+:local(.tableSearch) {
+	.table-search-container {
+		&.disabled-search {
+			margin-bottom: 55px;
+		}
+
+		margin-bottom: 20px;
+		float: right;
+		position: relative;
+
+		.search-input {
+			font-size: 16px;
+			text-indent: 16px;
+			width: 200px;
+			border-radius: 5px;
+			height: 32px;
+			padding-right: 25px;
+			padding-left: 15px;
+		}
+
+		.fa-search {
+			color: #acacac;
+			position: absolute;
+			top: 8px;
+			padding-left: 8px;
+		}
+
+		.fa-close {
+			color: #acacac;
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			cursor: pointer;
+		}
+	}
+
+	.table-container {
+		.row-count {
+			padding-top: 15px;
+			text-align: right;
+		}
+
+		span.header-label {
+			font-size: 14px;
+		}
+	}
+}
+
+:local(.filterPopup).filter-popup {
+	z-index: 100000000;
+	.popover-content {
+		width: 200px;
+		padding: 9px 7px;
+		border-radius: 3px;
+
+		.btn-group {
+			width: 100%;
+			margin-bottom: 10px;
+			.btn {
+				width: 50%;
+				color: #a1a1a1;
+				background-color: white;
+				height: 30px;
+				border: 1px solid #c8c8c8;
+				border-radius: 4px;
+				margin: 0px;
+
+				&.active {
+					background-color: $blue3;
+					color: white;
+				}
+
+				&:focus {
+					outline: none;
+				}
+
+				&:first-child {
+					border-top-right-radius: 0px;
+					border-bottom-right-radius: 0px;
+				}
+
+				&:last-child {
+					border-top-left-radius: 0px;
+					border-bottom-left-radius: 0px;
+				}
+			}
+		}
+
+		.filter-search-container {
+			position: relative;
+
+			.search-input {
+				font-size: 16px;
+				text-indent: 16px;
+				width: 100%;
+				border-radius: 5px;
+				height: 32px;
+				padding-right: 25px;
+				padding-left: 15px;
+			}
+
+			.fa-search,
+			.fa-close {
+				position: absolute;
+				color: #acacac;
+			}
+
+			.fa-search {
+				top: 8px;
+				left: 8px;
+			}
+
+			.fa-close {
+				top: 8px;
+				right: 8px;
+				cursor: pointer;
+			}
+		}
+
+		label {
+			margin-top: 5px;
+		}
+
+		hr {
+			margin: 0px;
+		}
+		.select-all-container {
+			margin: 3px 0px 3px 15px;
+		}
+
+		.discrete-filter-container {
+			.checkbox {
+				display: inline-block;
+				margin-right: 5px;
+				margin-bottom: 4px;
+			}
+			.checkbox-value {
+				text-overflow: ellipsis;
+			}
+		}
+	}
+}
+
+:local(.tableHeader).table-header {
+	position: relative;
+	.filter-indicator {
+		color: $blue3;
+		font-size: 10px;
+		vertical-align: text-top;
+		padding-top: 3px;
+		margin-right: 3px;
+	}
+}

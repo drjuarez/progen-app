@@ -1,0 +1,36 @@
+@import '../variables.scss';
+
+nav {
+  &.navbar.navbar-expand {
+    background-color: $light-black;
+    border: none;
+  }
+
+  .project-picker-nav {
+    background-color: red;
+  }
+
+  a {
+      color: $white !important;
+    }
+
+  .container-fluid a {
+    ul.navbar-nav {
+      a.navlink {
+        display: flex;
+        color: $white !important;
+      }
+    }
+  }
+
+  .container-fluid .navbar.navbar-expand-md.navbar-nav a.navlink{
+    background-color: $light-black;
+
+    & a.active {
+
+    }
+  }
+  .container-fluid .navbar-collapse .nav li a a.active {
+    opacity: .5;
+  }
+}

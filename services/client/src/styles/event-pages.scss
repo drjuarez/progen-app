@@ -1,0 +1,85 @@
+@import './variables.scss';
+
+.event-list-buttons {
+  color: $link-blue;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+i.action {
+  color: $primary-color;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.intro-delete-button {
+  display: flex;
+}
+.add-event {
+  display: flex;
+}
+
+.carousel-container {
+  .slider {
+    .slider-frame {
+      max-height: $slider-max-height;
+    }
+  }
+}
+
+.picture-container {
+  overflow: hidden;
+
+  &.primary-image {
+    width: 100px;
+    height: 30px;
+  }
+
+  &.thumbnail-image {
+    width: 30px;
+    height: 30px;
+
+  }
+
+  img {
+    width: 100%;
+    min-height: 100%;
+  }
+}
+
+.picture-load {
+  .dropzone-override {
+    border: 2px dashed $gray1;
+    margin-bottom: 20px;
+    padding: 20px;
+
+    i.fa-download {
+      color: $primary-color;
+    }
+  }
+
+  .preview-container {
+    max-width: 30vw;
+
+    img.preview {
+      display: inline;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.e-config-btn-group.btn-group {
+  label {
+    color: $primary-color;
+    border: 1px solid $primary-color;
+
+    &.active {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}

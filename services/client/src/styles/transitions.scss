@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+.file-upload-enter {
+  opacity: 0.01;
+}
+
+.file-upload-enter.file-upload-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.file-upload-appear {
+  opacity: 0.01;
+}
+
+.file-upload-appear.file-upload-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}

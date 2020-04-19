@@ -1,0 +1,40 @@
+@import '../variables';
+.info-hover {
+	&:hover &__hover {
+		opacity: 1;
+	}
+
+	&__hover {
+		opacity: 0;
+		display: inline;
+		position: relative;
+
+		p {
+			display: inline;
+		}
+
+		.hover-card-background {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(10%, -50%);
+			background-color: $primary-darkened;
+			color: $white;
+			border: 1px solid $gray1;
+			padding: 5px;
+			z-index: 10;
+			min-width: 200px;
+			border-radius: $panel-radius;
+
+		}
+	}
+
+	&__no-hover {
+		opacity: 1;
+		display: inline;
+
+		p {
+			display: inline;
+		}
+	}
+}

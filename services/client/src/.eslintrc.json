@@ -1,0 +1,38 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+
+  "settings": {
+    "react": {
+      "version": "16.0"
+    }
+  },
+
+  "plugins": [
+    "react"
+  ],
+
+  "extends": [
+    "standard-jsx"
+  ],
+
+  "rules": {
+    "react/jsx-no-bind": ["error", {
+      "allowArrowFunctions": true,
+      "allowBind": true,
+      "ignoreRefs": true
+    }],
+    "react/no-did-update-set-state": "warn",
+    "react/no-unknown-property": "warn",
+    "react/no-unused-prop-types": "warn",
+    "react/prop-types": "warn",
+    "react/jsx-indent": [0],
+    "react/react-in-jsx-scope": "warn"
+  }
+}
