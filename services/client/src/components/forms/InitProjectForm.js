@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import Form from '../componentLib/form/Form'
 import TextInput from '../componentLib/form/TextInput'
+import NumberInput from '../componentLib/form/NumberInput'
 import SelectInput from '../componentLib/form/SelectInput'
 import ActionButtons from '../componentLib/ActionButtons'
 import Collapse from "@kunukn/react-collapse";
@@ -53,11 +54,8 @@ class ProjectForm extends Component {
       <div className='project-init-form'>
         <div className={'pg-form-actions'}>
             <button className='btn btn-submit'>
-              Save
+              Run
             </button>
-          <button className='action-btn'>
-            💸
-          </button>
           <button
             className='action-btn expand'
             onClick={(e) => handleExpand(e)}
@@ -133,7 +131,7 @@ class ProjectForm extends Component {
                 inputType={'number'}
                 isRequired={false}
               />
-              <TextInput
+              <NumberInput
                 label={'Interest Rate'}
                 fieldName={'interestRate'}
                 formName={'project'}
@@ -149,7 +147,7 @@ class ProjectForm extends Component {
             className={'form-title'}
             onClick={() => handleFormToggle(2)}
           >
-            Income
+            Income (TODO)
           </h1>
           <Collapse isOpen={openFormIndices[2]}>
             <TextInput

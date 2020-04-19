@@ -134,7 +134,7 @@ class Statement extends Component {
 
     return (
       !isHere(proforma) ?
-        <p>No Project selected</p>
+        <p>Add Project Details and Tap 'Run'</p>
       :
         <div className='statement-container'>
           <p>Proforma</p>

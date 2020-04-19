@@ -151,7 +151,7 @@ const sampleProject = {
         financings: [{
           propertyCost: 100000,
           equityDown: 20000,
-          interestRate: .1,
+          interestRate: 0.1,
           loanMaturity: 30,
         }],
         revenues: [{
