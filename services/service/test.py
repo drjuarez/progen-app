@@ -1,11 +1,4 @@
 
-import pdb;
-pdb.set_trace()
-
-# exec(open('test.py').read())
-
-from core import modelController
-from dao.ProjectDao import ProjectDao
 from models.ProjectModel import ProjectModel
 from core.appInitializer import create_app
 
@@ -31,7 +24,8 @@ t = {
 create_app().app_context().push()
 
 pro = ProjectModel(t)
-pro.save()
+print(vars(pro))
+# pro.save()
 # p.initialize_project(financing_values, property_cost_values)
 
 

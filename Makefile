@@ -31,6 +31,9 @@ syncdb:
 seed:
 	pipenv run python db/seed_db.py
 
+deploy:
+	scp -i ~/.ssh/aws.pem .env ubuntu@18.136.202.67:~/progen-app/
+
 nginxdirs:
 	-mkdir var/www/
 	-cp dist var/www

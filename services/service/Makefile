@@ -24,3 +24,4 @@ seed:
 
 clear_dbcache:
 	python db/manage.py db.metadata.clear
+
