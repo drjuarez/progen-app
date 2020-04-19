@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: ./services/service
+      dockerfile: Dockerfile
+    image: progen-service
+    container_name: progen-service
+    hostname: service
+    command: postgres
+    environment:
+      APP_SETTINGS: ${APP_SETTINGS}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      DATABASE_URL: ${DATABASE_URL}
+      FLASK_ENV: ${FLASK_ENV}
+      PGPASSWORD: ${PGPASSWORD}
+      PGPORT: ${PGPORT}
+    stdin_open: true
+    tty: true
+    ports:
+      - 5000:5000
+#    depends_on:
+#      - postgres
+
+  client:
+    build:
+      context: ./services/client
+      dockerfile: Dockerfile
+    image: progen-client
+    container_name: progen-client
+    ports:
+      - 8080:8080
+      - 80:80
+    depends_on:
+      - server
+
+volumes:
+  dbdata:
