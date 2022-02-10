@@ -54,7 +54,7 @@
     "moment": "^2.23.0",
     "moment-timezone": "0.5.14",
     "node-notifier": "^5.4.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^3.0.0",
     "react": "16.4.0",
     "react-addons-css-transition-group": "15.6.2",
