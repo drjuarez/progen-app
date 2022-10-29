@@ -79,7 +79,7 @@
     "url-loader": "0.6.2",
     "webpack": "4.28.4",
     "webpack-cli": "^3.2.3",
-    "webpack-dashboard": "1.0.2",
+    "webpack-dashboard": "3.3.7",
     "webpack-dev-middleware": "^3.5.0",
     "webpack-dev-server": "^3.2.1",
     "webpack-hot-middleware": "^2.24.3",
